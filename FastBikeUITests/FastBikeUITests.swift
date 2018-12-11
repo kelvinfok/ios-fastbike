@@ -7,7 +7,7 @@ class FastBikeUITests: XCTestCase {
         continueAfterFailure = false
         XCUIApplication().launch()
     }
-    
+        
     func testExample() {
     }
 }
