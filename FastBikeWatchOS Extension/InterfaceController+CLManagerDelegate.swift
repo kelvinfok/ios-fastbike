@@ -23,9 +23,9 @@ extension InterfaceController: CLLocationManagerDelegate {
     func setMapZoomIfNeeded(location: CLLocation) {
         if mapZoomSet { return }
         mapZoomSet = true
-        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let span = MKCoordinateSpan.init(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let locationRegion = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        let region = MKCoordinateRegionMake(locationRegion, span)
+        let region = MKCoordinateRegion.init(center: locationRegion, span: span)
         mapView.setRegion(region)
     }
 
